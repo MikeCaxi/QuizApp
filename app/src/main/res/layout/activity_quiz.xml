@@ -28,33 +28,64 @@
         android:text="@string/quizQ1"
         android:textColor="#000"/>
 
-    <CheckBox
-        android:layout_width="wrap_content"
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/question1_a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp"
+            android:onClick="question1Clicked"
+            android:text="a.) O(n)"/>
+
+        <RadioButton
+            android:id="@+id/question1_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:onClick="question1Clicked"
+            android:text="b.) O(n^2)"/>
+
+        <RadioButton
+            android:id="@+id/question1_c"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:onClick="question1Clicked"
+            android:text="c.) O(logn)"/>
+
+        <RadioButton
+            android:id="@+id/question1_d"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:onClick="question1Clicked"
+            android:text="d.) O(n logn)"/>
+
+    </RadioGroup>
+
+    <Button
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_marginTop="16dp"
-        android:layout_marginLeft="16dp"
-        android:text="O(n)"/>
+        android:text="Submit"
+        android:textColor="#ffff"
+        android:background="@color/colorPrimary"
+        android:onClick="questionSubmit"
+        android:id="@+id/button01" />
 
-    <CheckBox
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/resultText"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:text="O(n^2)"/>
-
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:text="O(logn)"/>
-
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:text="O(n logn)"/>
-
-
-
-
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp"
+        android:textColor="#000"
+        />
 
 </LinearLayout>

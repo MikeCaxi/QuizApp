@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">QuizApp</string>
+    <string name="welcome">Welcome to the Computing Science Quiz!</string>
+    <string name="begin">Begin!</string>
+    <string name="title_activity_quiz">QuizActivity</string>
+    <string name="quizQ1">Q1) What is the big-O running time of Mergesort?</string>
+    <string name="q1a">0(n)</string>
+</resources>

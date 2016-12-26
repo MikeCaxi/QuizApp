@@ -14,6 +14,11 @@ public class QuizActivity extends AppCompatActivity {
     boolean q1B =false;
     boolean q1C =false;
     boolean q1D =false;
+    public int quizQuestionNumber = 0;
+    public String[] quizQuestions  = {
+            "Q1) What is the big-O running time of Mergesort?",
+            "Q2) What is the big-O running time of Insertion Sort"
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,8 +27,10 @@ public class QuizActivity extends AppCompatActivity {
 
         mQuizToolbar = (Toolbar) findViewById(R.id.quizToolBar);
         setSupportActionBar(mQuizToolbar);
-
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        setQuestionText();
+
 
     }
 
@@ -65,17 +72,22 @@ public class QuizActivity extends AppCompatActivity {
     }
 
 
-    public void questionSubmit(View view){
-
-        TextView showResult = (TextView) findViewById(R.id.resultText);
-        showResult.setText(checkAnswer());
-
+    public void questionSubmit(View view) {
+        String mShowText;
+        TextView showResult = (TextView) findViewById(R.id.result_text);
+        if (q1A || q1B || q1C) {
+            mShowText = "Unfortunately that is the incorrect answer, please try again";
+            showResult.setTextColor(getColor(R.color.error));
+        } else {
+            mShowText = "Congratulations, that is the correct answer!";
+            showResult.setTextColor(getColor(R.color.correct));
+        }
+        showResult.setText(mShowText);
     }
 
-    private String checkAnswer() {
-        if (q1A || q1B || q1C) {
-            return "Unfortunately that is the incorrect answer, please try again";
-        }
-        return "Congratulations, that is the correct answer!";
+    private void setQuestionText(){
+        TextView showResult = (TextView) findViewById(R.id.question_text);
+        showResult.setText(quizQuestions[quizQuestionNumber]);
+        quizQuestionNumber++;
     }
 }

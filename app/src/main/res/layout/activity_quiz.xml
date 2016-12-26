@@ -1,93 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:id="@+id/activity_quiz"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.android.quizapp.QuizActivity">
-
-    <android.support.design.widget.AppBarLayout
+    tools:context="com.example.android.quizapp.QuizActivity"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/activity_quiz"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        
-        <android.support.v7.widget.Toolbar
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/quizToolBar"
+                android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar">
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.AppBarLayout>
+
+        <TextView
+            android:id="@+id/question_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/quizToolBar"
-            android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar">
-        </android.support.v7.widget.Toolbar>
+            android:paddingTop="32dp"
+            android:paddingLeft="16dp"
+            android:textColor="#000"/>
 
-    </android.support.design.widget.AppBarLayout>
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/question_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="32dp"
-        android:paddingLeft="16dp"
-        android:text="@string/quizQ1"
-        android:textColor="#000"/>
+            <RadioButton
+                android:id="@+id/question_a"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="16dp"
+                android:onClick="question1Clicked" />
 
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/question_b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:onClick="question1Clicked" />
 
-        <RadioButton
-            android:id="@+id/question1_a"
-            android:layout_width="wrap_content"
+            <RadioButton
+                android:id="@+id/question_c"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:onClick="question1Clicked" />
+
+            <RadioButton
+                android:id="@+id/question_d"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:onClick="question1Clicked" />
+
+        </RadioGroup>
+
+        <Button
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:layout_marginTop="16dp"
-            android:layout_marginLeft="16dp"
-            android:onClick="question1Clicked"
-            android:text="a.) O(n)"/>
+            android:text="Submit"
+            android:textColor="#ffff"
+            android:background="@color/colorPrimary"
+            android:onClick="questionSubmit"
+            android:id="@+id/button01" />
 
-        <RadioButton
-            android:id="@+id/question1_b"
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/result_text"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:onClick="question1Clicked"
-            android:text="b.) O(n^2)"/>
-
-        <RadioButton
-            android:id="@+id/question1_c"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:onClick="question1Clicked"
-            android:text="c.) O(logn)"/>
-
-        <RadioButton
-            android:id="@+id/question1_d"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:onClick="question1Clicked"
-            android:text="d.) O(n logn)"/>
-
-    </RadioGroup>
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="16dp"
-        android:text="Submit"
-        android:textColor="#ffff"
-        android:background="@color/colorPrimary"
-        android:onClick="questionSubmit"
-        android:id="@+id/button01" />
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:textColor="#000" />
+    </LinearLayout>
 
     <TextView
-        android:id="@+id/result_text"
+        android:id="@+id/amount_correct"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginRight="24dp"
-        android:textColor="#000"
-        />
-
-</LinearLayout>
+        android:layout_alignParentBottom="true"
+        android:paddingBottom="36dp"
+        android:textSize="24sp"
+        android:textAlignment="center"/>
+</RelativeLayout>
